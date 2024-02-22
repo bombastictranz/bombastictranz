@@ -1,0 +1,20 @@
+<div class="column-layout group">
+  <div class="column-layout group_1">
+    <div class="row-layout group_2">
+      <h6 class="h6">
+        Sales
+      </h6>
+      <div class="row-layout group_3"></div>
+    </div>
+    <div class="row-layout group_4">
+      <div class="row-layout group_5">
+        <igx-combo [data]="eCommerceRevenue" placeholder="Choose a month" displayKey="Month" [autoFocusSearch]="true" (selectionChanging)="comboSelectionChanging($event)" class="combo">
+          <label igxLabel>Sales</label>
+        </igx-combo>
+      </div>
+    </div>
+    <div class="row-layout group_6">
+      <igx-category-chart computedPlotAreaMarginMode="series" [dataSource]="revenue" class="category-chart"></igx-category-chart>
+    </div>
+  </div>
+</div>

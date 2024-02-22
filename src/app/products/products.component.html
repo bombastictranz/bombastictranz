@@ -1,0 +1,301 @@
+<div class="column-layout group">
+  <div class="row-layout group_1">
+    <h6 class="h6">
+      Products
+    </h6>
+    <div class="row-layout group_2">
+      <button igxButton="raised" igxRipple [igxToggleAction]="addNewProduct" class="button">
+        <igx-icon>
+          add
+        </igx-icon>
+        <span>Add New Product</span>
+      </button>
+      <button igxButton="outlined" igxRipple class="button_1">
+        <igx-icon>
+          import_export
+        </igx-icon>
+        <span>Import Product</span>
+      </button>
+    </div>
+  </div>
+  <div class="row-layout group_1">
+    <div class="row-layout group_3">
+      <igx-select type="box" placeholder="Pick a Department" class="user-input">
+        <igx-select-item value="Option">
+          Women
+        </igx-select-item>
+        <igx-select-item value="Option">
+          Men
+        </igx-select-item>
+        <igx-select-item value="Option">
+          Children
+        </igx-select-item>
+        <label igxLabel>Department</label>
+      </igx-select>
+      <igx-combo [data]="inventoryAppProducts" placeholder="Choose categories" displayKey="Product" groupKey="Department" (selectionChanging)="comboSelectionChanging($event)" class="user-input">
+        <label igxLabel>Category</label>
+      </igx-combo>
+      <igx-input-group type="box" class="user-input">
+        <igx-prefix>
+          <igx-icon class="icon">
+            search
+          </igx-icon>
+        </igx-prefix>
+        <input type="text" igxInput />
+        <label igxLabel>Search</label>
+      </igx-input-group>
+    </div>
+    <button igxButton="flat" igxRipple [igxToggleAction]="dropdown" class="button_1">
+      <span>Sort By</span>
+      <igx-icon>
+        keyboard_arrow_down
+      </igx-icon>
+    </button>
+    <igx-drop-down #dropdown class="dropdown">
+      <igx-drop-down-item>
+        Alphabetically
+      </igx-drop-down-item>
+      <igx-drop-down-item>
+        Recently Added
+      </igx-drop-down-item>
+    </igx-drop-down>
+  </div>
+  <div class="row-layout products">
+    <igx-card type="outlined" *ngFor="let item of products" class="card">
+      <igx-card-media height="250px" class="media-content">
+        <img [src]="item.ImageURL" class="image" />
+      </igx-card-media>
+      <igx-card-header>
+        <h3 igxCardHeaderTitle>
+          {{ item.Product }}
+        </h3>
+        <h5 igxCardHeaderSubtitle>
+          {{ item.Department }}
+        </h5>
+      </igx-card-header>
+      <igx-card-content class="body-content">
+        <p class="ig-typography__body-2 text">
+          Here you can add some description of the product in more details
+        </p>
+      </igx-card-content>
+      <igx-card-actions class="actions-content">
+        <ng-container igxStart>
+          <button igxButton="outlined" igxRipple [igxToggleAction]="editProductDetails" class="button_2">
+            Edit
+          </button>
+        </ng-container>
+        <ng-container igxEnd>
+          <button igxButton="icon" igxRipple class="button_3">
+            <igx-icon>
+              remove_red_eye
+            </igx-icon>
+          </button>
+          <button igxButton="icon" igxRipple class="button_3">
+            <igx-icon>
+              delete
+            </igx-icon>
+          </button>
+        </ng-container>
+      </igx-card-actions>
+    </igx-card>
+  </div>
+</div>
+<igx-dialog [closeOnOutsideSelect]="true" [closeOnEscape]="true" #addNewProduct>
+  <igx-dialog-title>
+    <h5>
+      Add New Product
+    </h5>
+  </igx-dialog-title>
+  <ng-container>
+    <div class="column-layout group_4">
+      <div class="column-layout group_5">
+        <igx-input-group type="box" class="input">
+          <input type="text" placeholder="e.g Blue jeans" igxInput />
+          <label igxLabel>Product title</label>
+        </igx-input-group>
+        <div class="row-layout group_5">
+          <igx-select type="box" placeholder="Pick a Department" class="select">
+            <igx-select-item value="1">
+              Women's Clothing
+            </igx-select-item>
+            <igx-select-item value="2">
+              Men's Clothing
+            </igx-select-item>
+            <igx-select-item value="3">
+              Children's Clothing
+            </igx-select-item>
+            <label igxLabel>Department</label>
+          </igx-select>
+          <igx-simple-combo [data]="eCommerceSales" placeholder="Choose categories" valueKey="Item" displayKey="Item" class="single-select-combo">
+            <label igxLabel>Category</label>
+          </igx-simple-combo>
+        </div>
+        <igx-input-group type="box" class="ig-typography__body-1 textarea">
+          <label igxLabel>Product description</label>
+          <textarea placeholder="e.g.  Blue jeans, regular fit, 100% cotton" igxInput></textarea>
+        </igx-input-group>
+      </div>
+      <div class="column-layout group_6">
+        <p class="ig-typography__subtitle-2 text">
+          Images
+        </p>
+        <button igxButton="outlined" igxRipple class="button_4">
+          <igx-icon>
+            photo_camera
+          </igx-icon>
+          <span>Upload pictures</span>
+        </button>
+      </div>
+      <div class="row-layout group_7">
+        <igx-input-group type="box" class="input_1">
+          <input type="number" igxInput />
+          <label igxLabel>Unit price</label>
+        </igx-input-group>
+        <igx-input-group type="box" class="input_1">
+          <input type="number" igxInput />
+          <label igxLabel>Units in stock</label>
+        </igx-input-group>
+        <igx-input-group type="box" class="input_1">
+          <input type="number" igxInput />
+          <label igxLabel>Product #</label>
+        </igx-input-group>
+      </div>
+      <div class="column-layout group_6">
+        <p class="ig-typography__subtitle-2 text">
+          Select available sizes:
+        </p>
+        <div class="row-layout checkbox-group">
+          <igx-checkbox labelPosition="after" class="checkbox">
+            XS
+          </igx-checkbox>
+          <igx-checkbox labelPosition="after" class="checkbox">
+            S
+          </igx-checkbox>
+          <igx-checkbox labelPosition="after" class="checkbox">
+            M
+          </igx-checkbox>
+          <igx-checkbox labelPosition="after" class="checkbox">
+            L
+          </igx-checkbox>
+          <igx-checkbox labelPosition="after" class="checkbox">
+            XL
+          </igx-checkbox>
+          <igx-checkbox labelPosition="after" class="checkbox">
+            XXL
+          </igx-checkbox>
+        </div>
+      </div>
+      <div class="row-layout group_8">
+        <button igxButton="raised" igxRipple [igxToggleAction]="addNewProduct" class="button">
+          ADD PRODUCT
+        </button>
+        <button igxButton="flat" igxRipple [igxToggleAction]="addNewProduct" class="button_1">
+          CANCEL
+        </button>
+      </div>
+    </div>
+  </ng-container>
+  <igx-dialog-actions></igx-dialog-actions>
+</igx-dialog>
+<igx-dialog [closeOnOutsideSelect]="true" [closeOnEscape]="true" #editProductDetails>
+  <igx-dialog-title>
+    <h5>
+      Edit Product Details
+    </h5>
+  </igx-dialog-title>
+  <ng-container>
+    <div class="column-layout group_4">
+      <div class="column-layout group_5">
+        <igx-input-group type="box" class="input">
+          <input type="text" [(ngModel)]="value" placeholder="e.g Blue jeans" igxInput />
+          <label igxLabel>Product title</label>
+        </igx-input-group>
+        <div class="row-layout group_5">
+          <igx-select type="box" placeholder="Pick a Department" [(ngModel)]="value1" class="select">
+            <igx-select-item value="1">
+              Women's Clothing
+            </igx-select-item>
+            <igx-select-item value="2">
+              Men's Clothing
+            </igx-select-item>
+            <igx-select-item value="3">
+              Children's Clothing
+            </igx-select-item>
+            <label igxLabel>Department</label>
+          </igx-select>
+          <igx-simple-combo [data]="eCommerceSales" placeholder="Choose categories" valueKey="Item" displayKey="Item" class="single-select-combo">
+            <label igxLabel>Category</label>
+          </igx-simple-combo>
+        </div>
+        <igx-input-group type="box" class="ig-typography__body-1 textarea">
+          <label igxLabel>Product description</label>
+          <textarea placeholder="e.g.  Blue jeans, regular fit, 100% cotton" value="Here you can add some description of the product in more details" igxInput></textarea>
+        </igx-input-group>
+      </div>
+      <div class="column-layout group_6">
+        <p class="ig-typography__subtitle-2 text">
+          Images
+        </p>
+        <div class="row-layout group_5">
+          <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" class="image_1" />
+          <img src="https://images.unsplash.com/photo-1622445272461-c6580cab8755?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" class="image_1" />
+          <img src="https://images.unsplash.com/photo-1622445275463-afa2ab738c34?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" class="image_1" />
+        </div>
+        <button igxButton="outlined" igxRipple class="button_4">
+          <igx-icon>
+            photo_camera
+          </igx-icon>
+          <span>Upload pictures</span>
+        </button>
+      </div>
+      <div class="column-layout group_6">
+        <p class="ig-typography__subtitle-2 text">
+          Select available sizes:
+        </p>
+        <div class="row-layout checkbox-group">
+          <igx-checkbox labelPosition="after" [checked]="true" class="checkbox">
+            XS
+          </igx-checkbox>
+          <igx-checkbox labelPosition="after" [checked]="true" class="checkbox">
+            S
+          </igx-checkbox>
+          <igx-checkbox labelPosition="after" [checked]="true" class="checkbox">
+            M
+          </igx-checkbox>
+          <igx-checkbox labelPosition="after" [checked]="true" class="checkbox">
+            L
+          </igx-checkbox>
+          <igx-checkbox labelPosition="after" [checked]="true" class="checkbox">
+            XL
+          </igx-checkbox>
+          <igx-checkbox labelPosition="after" class="checkbox">
+            XXL
+          </igx-checkbox>
+        </div>
+      </div>
+      <div class="row-layout group_7">
+        <igx-input-group type="box" class="input_1">
+          <input type="number" [(ngModel)]="value2" igxInput />
+          <label igxLabel>Unit price</label>
+        </igx-input-group>
+        <igx-input-group type="box" class="input_1">
+          <input type="number" [(ngModel)]="value3" igxInput />
+          <label igxLabel>Units in stock</label>
+        </igx-input-group>
+        <igx-input-group type="box" class="input_1">
+          <input type="text" [(ngModel)]="value4" igxInput />
+          <label igxLabel>Product #</label>
+        </igx-input-group>
+      </div>
+      <div class="row-layout group_8">
+        <button igxButton="raised" igxRipple [igxToggleAction]="editProductDetails" class="button">
+          UPDATE
+        </button>
+        <button igxButton="flat" igxRipple [igxToggleAction]="editProductDetails" class="button_1">
+          CANCEL
+        </button>
+      </div>
+    </div>
+  </ng-container>
+  <igx-dialog-actions></igx-dialog-actions>
+</igx-dialog>
