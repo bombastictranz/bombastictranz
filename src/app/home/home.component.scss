@@ -1,0 +1,203 @@
+:host {
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+}
+.column-layout {
+  display: flex;
+  flex-direction: column;
+}
+.group {
+  background-color: hsla(var(--ig-gray-100));
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 16px;
+  overflow: auto;
+  position: relative;
+  padding: 16px;
+  min-height: 50px;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.row-layout {
+  display: flex;
+}
+.metrics {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 16px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.card {
+  height: max-content;
+  min-width: 236px;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.group_1 {
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+}
+.group_2 {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch;
+  gap: 16px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+.new-products {
+  background-color: hsla(var(--ig-surface-500));
+  border-color: hsla(var(--ig-gray-300));
+  border-width: 1px;
+  border-style: solid;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 16px;
+  position: relative;
+  padding: 16px;
+  min-width: 236px;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.group_3 {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  position: relative;
+  min-width: 50px;
+}
+.group_4 {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 16px;
+  overflow: auto;
+  position: relative;
+  min-width: 50px;
+  min-height: 260px;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.group_5 {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+}
+.group_6 {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 4px;
+  position: relative;
+  flex-shrink: 0;
+}
+.group_7 {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  position: relative;
+  min-width: 50px;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.body-content {
+  min-width: 50px;
+  min-height: 50px;
+}
+.actions-content {
+  min-width: 50px;
+  min-height: 40px;
+}
+.image {
+  object-fit: contain;
+  margin: 0 0 24px;
+  width: 100px;
+  height: 100px;
+  min-width: 0;
+  min-height: 0;
+  max-width: 100px;
+  max-height: 100px;
+  flex-shrink: 0;
+}
+.text {
+  text-align: center;
+  margin: 0 0 8px;
+  height: max-content;
+  min-width: min-content;
+}
+.h4 {
+  text-align: center;
+  color: hsla(var(--ig-gray-800));
+  height: max-content;
+  min-width: min-content;
+}
+.text_1 {
+  text-align: center;
+  color: hsla(var(--ig-success-500));
+  height: max-content;
+  min-width: min-content;
+}
+.text_2 {
+  text-align: center;
+  color: hsla(var(--ig-primary-500));
+  height: max-content;
+  min-width: min-content;
+}
+.text_3 {
+  color: hsla(var(--ig-gray-800));
+  height: max-content;
+  min-width: min-content;
+}
+.avatar {
+  --igx-avatar-background: hsla(var(--ig-surface-500));
+}
+.text_4 {
+  height: max-content;
+  min-width: min-content;
+}
+.button {
+  margin: 0 8px 8px 0;
+  height: max-content;
+}
+.list {
+  height: max-content;
+}
+.pie-chart {
+  --brushes: #FF7453 #AAA6A5 #3CB76E #5B5756 #FFAE53;
+  --outlines: #FF7453 #AAA6A5 #3CB76E #5B5756 #FFAE53;
+  min-width: 100px;
+  min-height: 200px;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.category-chart {
+  --brushes: #FF7453 #AAA6A5 #3CB76E #5B5756 #FFAE53;
+  --outlines: #FF7453 #AAA6A5 #3CB76E #5B5756 #FFAE53;
+  --marker-brushes: #FF7453 #AAA6A5 #3CB76E #5B5756 #FFAE53;
+  --marker-outlines: #FF7453 #AAA6A5 #3CB76E #5B5756 #FFAE53;
+  min-width: 100px;
+  min-height: 200px;
+  flex-grow: 1;
+  flex-basis: 0;
+}

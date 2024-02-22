@@ -1,0 +1,58 @@
+<div class="column-layout group">
+  <igx-list class="list">
+    <igx-list-item [isHeader]="false" routerLink="/home">
+      <span igxListThumbnail>
+        <igx-avatar src="/assets/Avatar13.png" size="medium" shape="circle" class="avatar"></igx-avatar>
+      </span>
+      <span igxListLineTitle>Jane Doe</span>
+      <span igxListLineSubTitle>Sales Manager</span>
+      <span igxListAction>
+        <igx-icon class="icon">
+          keyboard_arrow_down
+        </igx-icon>
+      </span>
+    </igx-list-item>
+    <igx-list-item [isHeader]="false" routerLink="/home">
+      <span igxListThumbnail>
+        <igx-avatar src="/assets/Store_Icon_Small.svg" class="avatar"></igx-avatar>
+      </span>
+      <span igxListLineTitle>Dashboard</span>
+    </igx-list-item>
+    <igx-list-item [isHeader]="false" routerLink="/products">
+      <span igxListThumbnail>
+        <igx-avatar src="/assets/Inventory_Icon_Small.svg" class="avatar"></igx-avatar>
+      </span>
+      <span igxListLineTitle>Products</span>
+    </igx-list-item>
+    <igx-list-item [isHeader]="false" routerLink="/orders">
+      <span igxListThumbnail>
+        <igx-avatar src="/assets/Orders_Icon_Small.svg" class="avatar"></igx-avatar>
+      </span>
+      <span igxListLineTitle>Orders</span>
+    </igx-list-item>
+    <igx-list-item [isHeader]="false" routerLink="/sales">
+      <span igxListThumbnail>
+        <igx-avatar src="/assets/Sales_Icon_Small.svg" class="avatar"></igx-avatar>
+      </span>
+      <span igxListLineTitle>Sales</span>
+    </igx-list-item>
+    <igx-list-item [isHeader]="false" routerLink="/customers">
+      <span igxListThumbnail>
+        <igx-avatar src="/assets/Customers_Icon_Small.svg" class="avatar"></igx-avatar>
+      </span>
+      <span igxListLineTitle>Customers</span>
+    </igx-list-item>
+    <igx-list-item [isHeader]="false" routerLink="/reports">
+      <span igxListThumbnail>
+        <igx-avatar src="/assets/Reports_Icon_Small.svg" class="avatar"></igx-avatar>
+      </span>
+      <span igxListLineTitle>Reports</span>
+    </igx-list-item>
+  </igx-list>
+  <div class="column-layout group_1">
+    <img src="/assets/InventoryMgmt_Logo.svg" class="image" />
+  </div>
+</div>
+<div class="view-container">
+  <router-outlet></router-outlet>
+</div>

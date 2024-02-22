@@ -1,0 +1,176 @@
+<div class="column-layout group">
+  <div class="row-layout metrics">
+    <igx-card type="outlined" class="card">
+      <igx-card-header>
+        <h3 igxCardHeaderTitle>
+        </h3>
+        <h5 igxCardHeaderSubtitle>
+        </h5>
+      </igx-card-header>
+      <igx-card-content class="body-content">
+        <div class="column-layout group_1">
+          <img src="/assets/Products.svg" class="image" />
+          <p class="ig-typography__subtitle-1 text">
+            Products
+          </p>
+          <h4 class="h4">
+            1,236
+          </h4>
+          <p class="ig-typography__subtitle-2 text_1">
+            Increased 75%
+          </p>
+        </div>
+      </igx-card-content>
+      <igx-card-actions class="actions-content">
+        <ng-container igxEnd>
+          <button igxButton="outlined" igxRipple class="button">
+            View report
+          </button>
+        </ng-container>
+      </igx-card-actions>
+    </igx-card>
+    <igx-card type="outlined" class="card">
+      <igx-card-header>
+        <h3 igxCardHeaderTitle>
+        </h3>
+        <h5 igxCardHeaderSubtitle>
+        </h5>
+      </igx-card-header>
+      <igx-card-content class="body-content">
+        <div class="column-layout group_1">
+          <img src="/assets/Orders.svg" class="image" />
+          <p class="ig-typography__subtitle-1 text">
+            Orders
+          </p>
+          <h4 class="h4">
+            3,612
+          </h4>
+          <p class="ig-typography__subtitle-2 text_1">
+            Increased 75%
+          </p>
+        </div>
+      </igx-card-content>
+      <igx-card-actions class="actions-content">
+        <ng-container igxEnd>
+          <button igxButton="outlined" igxRipple class="button">
+            View report
+          </button>
+        </ng-container>
+      </igx-card-actions>
+    </igx-card>
+    <igx-card type="outlined" class="card">
+      <igx-card-header>
+        <h3 igxCardHeaderTitle>
+        </h3>
+        <h5 igxCardHeaderSubtitle>
+        </h5>
+      </igx-card-header>
+      <igx-card-content class="body-content">
+        <div class="column-layout group_1">
+          <img src="/assets/Sales.svg" class="image" />
+          <p class="ig-typography__subtitle-1 text">
+            Sales
+          </p>
+          <h4 class="h4">
+            $35,000
+          </h4>
+          <p class="ig-typography__subtitle-2 text_2">
+            Decreased 15%
+          </p>
+        </div>
+      </igx-card-content>
+      <igx-card-actions class="actions-content">
+        <ng-container igxEnd>
+          <button igxButton="outlined" igxRipple class="button">
+            View report
+          </button>
+        </ng-container>
+      </igx-card-actions>
+    </igx-card>
+    <igx-card type="outlined" class="card">
+      <igx-card-header>
+        <h3 igxCardHeaderTitle>
+        </h3>
+        <h5 igxCardHeaderSubtitle>
+        </h5>
+      </igx-card-header>
+      <igx-card-content class="body-content">
+        <div class="column-layout group_1">
+          <img src="/assets/Customers.svg" class="image" />
+          <p class="ig-typography__subtitle-1 text">
+            Customers
+          </p>
+          <h4 class="h4">
+            +10
+          </h4>
+          <p class="ig-typography__subtitle-2 text_1">
+            Increased 75%
+          </p>
+        </div>
+      </igx-card-content>
+      <igx-card-actions class="actions-content">
+        <ng-container igxEnd>
+          <button igxButton="outlined" igxRipple class="button">
+            View report
+          </button>
+        </ng-container>
+      </igx-card-actions>
+    </igx-card>
+  </div>
+  <div class="row-layout group_2">
+    <div class="column-layout new-products">
+      <div class="row-layout group_3">
+        <p class="ig-typography__subtitle-2 text_3">
+          New Products
+        </p>
+      </div>
+      <div class="column-layout group_4">
+        <igx-list class="list">
+          <igx-list-item [isHeader]="false" *ngFor="let item of inventoryAppNewProducts">
+            <span igxListThumbnail>
+              <igx-avatar [src]="item.ImageURL" size="medium" class="avatar"></igx-avatar>
+            </span>
+            <span igxListLine>
+              <div class="column-layout group_5">
+                <p class="ig-typography__subtitle-2 text_4">
+                  {{ item.Product }}
+                </p>
+                <div class="row-layout group_6">
+                  <p class="ig-typography__caption text_4">
+                    {{ item.Category }}
+                  </p>
+                  <p class="ig-typography__caption text_4">
+                    |
+                  </p>
+                  <p class="ig-typography__caption text_4">
+                    {{ item.Code }}
+                  </p>
+                </div>
+              </div>
+            </span>
+          </igx-list-item>
+        </igx-list>
+      </div>
+    </div>
+    <div class="column-layout new-products">
+      <div class="row-layout group_3">
+        <p class="ig-typography__subtitle-2 text_3">
+          Sales By Category
+        </p>
+      </div>
+      <div class="row-layout group_7">
+        <igx-pie-chart [dataSource]="eCommerceSales" labelMemberPath="Item" valueMemberPath="Sales" class="pie-chart"></igx-pie-chart>
+      </div>
+    </div>
+    <div class="column-layout new-products">
+      <div class="row-layout group_3">
+        <p class="ig-typography__subtitle-2 text_3">
+          Total Sales
+        </p>
+      </div>
+      <div class="row-layout group_7">
+        <igx-category-chart [dataSource]="eCommerceRevenue" chartType="column" computedPlotAreaMarginMode="series" routerLink="/sales" class="category-chart"></igx-category-chart>
+      </div>
+    </div>
+  </div>
+</div>
