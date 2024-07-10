@@ -1,3 +1,4 @@
+![e63d2f5cb3093ba86e59b8c0986d0e8b__scv1__622x368](https://github.com/bombastictranz/bombastictranz/assets/110788242/574264fc-00e0-4cad-8c33-835fdb7a400a)
 Romeo Rosete # Inventory Management
 
 This project was generated with [App Builder Code Gen](https://www.infragistics.com/products/appbuilder).
