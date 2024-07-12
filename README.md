@@ -1,3 +1,4 @@
+Stock Control Supervisors . Romeo Rosete [transactions_ACB_Universal (8) (1).csv](https://github.com/user-attachments/files/16197564/transactions_ACB_Universal.8.1.csv)
 ![e63d2f5cb3093ba86e59b8c0986d0e8b__scv1__622x368](https://github.com/bombastictranz/bombastictranz/assets/110788242/574264fc-00e0-4cad-8c33-835fdb7a400a)
 Romeo Rosete # Inventory Management
 
